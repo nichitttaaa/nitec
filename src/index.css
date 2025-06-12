@@ -1,12 +1,16 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    width: 100vw;
-    height: 100vh;
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-container {
+  @apply w-screen h-screen;
 }
