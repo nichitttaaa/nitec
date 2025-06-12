@@ -1,12 +1,34 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100vw;
     height: 100vh;
 }
+
+.page-container {
+    @apply w-screen h-screen
+}
+
+.Cover {
+    @apply w-280 h-150 bg-gray-300 rounded-xl relative m-5 pt-6
+}
+
+.bottom-right-box {
+    @apply absolute bg-(image:<../>) w-50 h-75 rounded-xl top-67 left-220
+}
+
+.smaller-cover {
+    @apply mt-55 ml-3 text-sm text-gray-600
+}
+
+h3 {
+    @apply text-xs text-gray-400
+}
+
