@@ -1,7 +1,9 @@
+
 import Home from "./pages/Home"
 import Cart from "./pages/Cart"
 import Liked from "./pages/Liked"
 import User from "./pages/User"
+
 
 const router = [
     {
@@ -23,7 +25,7 @@ const router = [
         path: "/user",
         element: <User />,
         showNavBar: true
-    } 
+    }
 ]
 
 export default router

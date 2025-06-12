@@ -1,8 +1,10 @@
-export default function NavBar() {
-    return(
-        <div className="w-full h-10 bg-gray-800 rounded-xl flex justify-between items-center">
+
+const NavBar = () => {
+    return (
+        <div className="w-full h-10 bg-gray-400 rounded-xl justify-between flex items-center">
             <span>Home</span>
             <span>User</span>
         </div>
     )
 }
+export default NavBar

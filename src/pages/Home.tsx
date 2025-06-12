@@ -1,9 +1,11 @@
-import { Search } from "lucide-react"
+import Colors from "../components/core/Colors.tsx";
 
-export default function Home() {
-    return(
+const Home = () =>{
+    return (
         <div className="page-container">
-            <Search className="size-10" stroke="#000"/>
+            <Colors/>
         </div>
     )
+
 }
+export default Home;
