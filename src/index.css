@@ -2,15 +2,14 @@
 @config "../tailwind.config.js";
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+ @apply box-border;
 
 }
 body{
+
     width: 100vw;
     height: 100vh;
-    @apply bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] bg-no-repeat bg-cover
+    @apply bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] bg-no-repeat bg-cover m-0 p-0;
 }
 .page-container{
     @apply w-screen h-full;
