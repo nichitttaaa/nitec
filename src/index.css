@@ -10,10 +10,7 @@ body{
     width: 100vw;
     height: 100vh;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 4af9dce (crearea compomentelor de baza)
 .page-container{
     @apply w-screen h-screen;
 }
