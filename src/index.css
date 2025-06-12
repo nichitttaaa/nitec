@@ -5,14 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 body{
     width: 100vw;
     height: 100vh;
-    @apply bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] bg-no-repeat bg-cover
-}
-.page-container{
-    @apply w-screen h-full;
-
 }
