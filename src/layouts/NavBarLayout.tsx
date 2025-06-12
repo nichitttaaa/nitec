@@ -8,7 +8,7 @@ interface NavBarLayoutProps {
 
 function NavBarLayout ({children, showNavBar}: NavBarLayoutProps) {
     return (
-        <div className="flex flex-col ">
+        <div className="w-screen h-screen flex flex-col items-start">
             {showNavBar && <NavBar/>}
             {children}
         </div>
