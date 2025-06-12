@@ -7,13 +7,15 @@ export default function App() {
     <Routes>
       {router.map((route, index) => {
         return (
-          <NavBarLayout showNavBar={true}>
-            <Route
-              key={index}
-              path={route.path}
-              element={route.element}
-            ></Route>
-          </NavBarLayout>
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <NavBarLayout showNavBar={route.showNavBar}>
+                {route.element}
+              </NavBarLayout>
+            }
+          ></Route>
         );
       })}
     </Routes>
