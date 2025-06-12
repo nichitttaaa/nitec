@@ -1,16 +1,18 @@
-import NavBar from "../components/core/NavBar"
+import NavBar from "../components/core/NavBar.tsx";
 import type {ReactNode} from "react";
 
 interface NavBarLayoutProps {
     children: ReactNode;
     showNavBar: boolean;
 }
-const NavBarLayout = ({children, showNavBar}:NavBarLayoutProps) =>{
+
+function NavBarLayout ({children, showNavBar}: NavBarLayoutProps) {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
             {showNavBar && <NavBar/>}
             {children}
         </div>
     )
 }
+
 export default NavBarLayout;
