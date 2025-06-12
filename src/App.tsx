@@ -1,26 +1,9 @@
-<<<<<<< HEAD
-import {Routes, Route} from "react-router"
-import router from "./router"
-import NavBarLayout from "./layouts/NavBarLayout"
-
-export default function App() {
-  return (
-    <Routes>
-      {router.map((route, index) => {
-        return (
-          <NavBarLayout showNavBar={true}>
-            <Route key={index} path={route.path} element={route.element}></Route>
-          </NavBarLayout>
-      )})}
-    </Routes>
-  )
-=======
 import router from "./router.tsx";
 import {Route, Routes} from "react-router";
 import NavBarLayout from "./layouts/NavBarLayout.tsx";
 
 
-function App() {
+export default function App() {
 
 
     return (
@@ -36,5 +19,4 @@ function App() {
             })}
         </Routes>
     )
->>>>>>> 4af9dce (crearea compomentelor de baza)
 }
