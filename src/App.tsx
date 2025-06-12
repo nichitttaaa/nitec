@@ -1,11 +1,23 @@
+import { Routes, Route } from "react-router";
+import router from "./router";
+import NavBarLayout from "./layouts/NavBarLayout";
 
-
-function App() {
- 
-
+export default function App() {
   return (
-   <div>app</div>
-  )
+    <Routes>
+      {router.map((route, index) => {
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <NavBarLayout showNavBar={route.showNavBar}>
+                {route.element}
+              </NavBarLayout>
+            }
+          ></Route>
+        );
+      })}
+    </Routes>
+  );
 }
-
-export default App
