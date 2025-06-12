@@ -1,5 +1,7 @@
-export default function Liked() {
-    return(
+
+const Liked = () =>{
+    return (
         <div className="page-container">Liked</div>
     )
 }
+export default Liked
