@@ -1,7 +1,8 @@
+import CartSummary from "../components/core/CartSummary";
 
 const Cart =() =>{
     return (
-        <div className="page-container">Cart</div>
+        <CartSummary />
     )
 }
 export default Cart;
