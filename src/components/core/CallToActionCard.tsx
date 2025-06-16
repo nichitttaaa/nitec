@@ -1,60 +1,73 @@
 const CTAcard = () => {
-  const x = "X_icon.svg.png";
   return (
-    <section className="bg-[#F1F3F2] w-[600px] rounded-3xl p-6 md:p-12 flex flex-col md:flex-row justify-between items-center gap-10">
-      <div className="flex flex-col gap-6 max-w-xl">
-        <span className="text-sm font-medium bg-white px-3 py-1 rounded-full shadow inline-flex items-center gap-2">
+    <section className="bg-[#F1F3F2] w-full max-w-[1000px] ml-4 rounded-3xl px-6 py-12 flex flex-col md:flex-row  gap-10">
+      {/* LEFT SIDE */}
+      <div className="flex flex-col gap-6 w-full md:w-3/5">
+        {/* Tagline */}
+        <span className="text-sm font-medium bg-white px-3 py-1 rounded-full shadow inline-flex items-center gap-2 w-fit">
           <span className="w-3 h-3 bg-gray-600 rounded-full"></span>
           Music is Classic
         </span>
-        <h1 className="text-5xl font-bold leading-tight text-black">
+
+        {/* Main Heading */}
+        <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-black">
           Sequoia Inspiring <br /> Musico.
         </h1>
+
+        {/* Sub Section */}
         <div>
           <span className="text-2xl font-semibold text-gray-800">01</span>
           <span className="block h-0.5 w-10 bg-gray-400 my-1"></span>
-          <h2 className="text-lg font-semibold text-black-700">Clear Sounds</h2>
-          <p className="text-sm text-gray-600 ">
+          <h2 className="text-lg font-semibold text-gray-800">Clear Sounds</h2>
+          <p className="text-sm text-gray-600">
             Making your dream music come true
             <br />
             stay with Sequios Sounds!
           </p>
         </div>
-        <button className="mt-4 px-6 py-3 rounded-full bg-lime-300 hover:bg-lime-400 text-black font-semibold text-sm w-fit flex items-center gap-2 !p-2">
-          View All Products
-          <span className=" rotate-315 w-6 h-6 rounded-full bg-black text-white flex items-center justify-center">
-            ➜
-          </span>
-        </button>
 
-        <div className="flex items-center gap-4 mt-6">
-          <span className="text-sm text-gray-500">Follow us on:</span>
+        {/* Call to Action */}
+        <div className="flex flex-col  gap-6 max-w-xl order-1 md:order-1">
+          <button className="px-6 py-3 rounded-full bg-lime-300 hover:bg-lime-400 text-black font-semibold text-sm flex items-center gap-2 transition-all w-fit">
+            View All Products
+            <span className="rotate-315 w-6 h-6 rounded-full bg-black text-white flex items-center justify-center">
+              ➜
+            </span>
+          </button>
+
+          {/* Social Media */}
           <div className="flex items-center gap-2">
-            <a href="#" className="bg-white rounded-full p-2 shadow">
-              <img src="/Xlogo.png" alt="Twitter" className="w-4 h-4" />
-            </a>
-            <a href="#" className="bg-white rounded-full p-2 shadow">
-              <img src="/tiktokLogo.svg" alt="TikTok" className="w-4 h-4" />
-            </a>
-            <a href="#" className="bg-white rounded-full p-2 shadow">
-              <img src="/instLogo.png" alt="Instagram" className="w-4 h-4" />
-            </a>
-            <a href="#" className="bg-white rounded-full p-2 shadow">
-              <img src="/linkLogo.png" alt="LinkedIn" className="w-4 h-4" />
-            </a>
+            <span className="text-sm text-gray-500">Follow us on:</span>
+            {[
+              { src: "/Xlogo.png", alt: "Twitter" },
+              { src: "/titktokLogo.svg", alt: "TikTok" },
+              { src: "/instLogo.png", alt: "Instagram" },
+              { src: "/linkLogo.png", alt: "LinkedIn" },
+            ].map((logo, index) => (
+              <a
+                key={index}
+                href="#"
+                className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center hover:border-lime-300 border border-transparent transition-all overflow-hidden"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="w-6 h-6 object-contain"
+                />
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="relative">
+      {/* RIGHT SIDE - Image */}
+      <div className="relative w-full md:w-2/5 flex justify-center  order-1 md:order-2 ">
         <img
           src="/headphones.png"
           alt="Blue Headphones"
-          className="w-[300px] md:w-[400px] object-contain"
+          className="w-[70%] sm:w-[80%] md:w-full object-contain"
         />
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white p-2 rounded-full shadow">
-          <span className="text-xl">&lt;/&gt;</span>
-        </div>
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white p-2 rounded-full shadow" />
       </div>
     </section>
   );
