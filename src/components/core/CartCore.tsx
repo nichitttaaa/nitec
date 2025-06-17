@@ -34,7 +34,7 @@ export default function CartSummary() {
                 <div className="flex justify-center items-center gap-2 font-semibold">
                     <button
                         onClick={() => handleDecrement(product.id)}
-                        className="w-6 h-6 rounded bg-white border text-gray-500 hover:text-gray-700  font-mono leading-none"
+                        className="w-6 h-6 rounded bg-white border text-gray-500 hover:text-gray-700 font-mono leading-none"
                     >
                         –
                     </button>
@@ -84,29 +84,31 @@ export default function CartSummary() {
 
 
     return (
-        <div className="w-full h-auto">
-            <div className="flex gap-10 mx-12">
-                {/* Colonna sinistra: Titolo + tabella */}
-                <div className="w-2/3">
-                    <div className="flex flex-col my-8">
-                        <span className="text-2xl font-semibold">Shopping Bag</span>
-                        <span>{cartItems.length} items in your bag.</span>
-                    </div>
-
-                    <div className="bg-white rounded-xl overflow-x-auto shadow-lg">
-                        <div className="grid [grid-template-columns:2fr_1fr_1fr_1fr] gap-4 px-6 py-4 font-bold">
-                            <span>Product</span>
-                            <span className="text-center">Price</span>
-                            <span className="text-center">Quantity</span>
-                            <span className="text-center">Total Price</span>
+        <div className="w-full flex flex-col min-h-screen">
+            <main className="flex-grow">
+                <div className="flex gap-10 mx-12">
+                    {/* Colonna sinistra: Titolo + tabella */}
+                    <div className="w-2/3">
+                        <div className="flex flex-col my-8">
+                            <span className="text-2xl font-semibold">Shopping Bag</span>
+                            <span>{cartItems.length} items in your bag.</span>
                         </div>
-                        {productDisplay}
-                    </div>
-                </div>
 
-                {/* Colonna destra: Sidebar */}
-                <CartSummarySidebar subtotal={subtotal} />
-            </div>
+                        <div className="bg-white rounded-xl overflow-x-auto shadow-lg max-w-full">
+                            <div className="grid [grid-template-columns:2fr_1fr_1fr_1fr] gap-4 px-6 py-4 font-bold">
+                                <span>Product</span>
+                                <span className="text-center">Price</span>
+                                <span className="text-center">Quantity</span>
+                                <span className="text-center">Total Price</span>
+                            </div>
+                            {productDisplay}
+                        </div>
+                    </div>
+
+                    {/* Colonna destra: Sidebar */}
+                    <CartSummarySidebar subtotal={subtotal} />
+                </div>
+            </main>
             <CartFooter />
         </div>
     );

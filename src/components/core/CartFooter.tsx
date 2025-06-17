@@ -1,6 +1,26 @@
+function InfoBox({
+  icon,
+  title,
+  description,
+}: {
+  icon: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="flex gap-3 bg-gray-50 p-4 rounded-xl flex-1 shadow-sm">
+      <div className="text-2xl">{icon}</div>
+      <div>
+        <h4 className="font-semibold text-sm">{title}</h4>
+        <p className="text-xs text-gray-500">{description}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function CartFooter() {
   return (
-    <div className="w-full px-10 py-8 bg-white flex justify-between gap-4 mt-10">
+    <div className="px-10 py-8 flex justify-between gap-4">
       <InfoBox
         icon="🚚"
         title="Free Shipping"
@@ -19,28 +39,9 @@ export default function CartFooter() {
       <InfoBox
         icon="🎁"
         title="Gift Cards"
-        description="For your loved one, in store and online"
+        description="For your loved one, in any amount"
       />
     </div>
   );
 }
 
-function InfoBox({
-  icon,
-  title,
-  description,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="flex items-start gap-3 bg-gray-50 p-4 rounded-xl flex-1 shadow-sm">
-      <div className="text-2xl">{icon}</div>
-      <div>
-        <h4 className="font-semibold text-sm">{title}</h4>
-        <p className="text-xs text-gray-500">{description}</p>
-      </div>
-    </div>
-  );
-}

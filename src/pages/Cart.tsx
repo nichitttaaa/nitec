@@ -2,7 +2,7 @@ import CartCore from "../components/core/CartCore";
 
 const Cart =() =>{
     return (
-        <CartCore />
+            <CartCore />          
     )
 }
 export default Cart;

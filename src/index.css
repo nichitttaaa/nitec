@@ -3,12 +3,14 @@
 
 *{
  @apply box-border;
-
 }
+
 body{
     width: 100vw;
     height: 100vh;
-    @apply bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] bg-no-repeat bg-cover m-0 p-0;
+    @apply min-h-screen bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] m-0 p-0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .page-container{
     @apply w-screen h-full;

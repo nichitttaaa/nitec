@@ -14,7 +14,7 @@ export default function CartSummarySidebar({ subtotal }: Props) {
     const total = subtotal - discount;
 
     return (
-        <div className="w-1/3 bg-white rounded-xl shadow-lg p-6 h-fit my-8">
+        <div className="w-1/3 bg-white rounded-xl shadow-lg p-6 h-fit mt-8">
             {/* Sezione: Spedizione */}
             <h2 className="text-lg font-semibold mb-4">Calculated Shipping</h2>
 
