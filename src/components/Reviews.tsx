@@ -1,7 +1,7 @@
-import star from "./star.png"
-import person1 from "./person1.png"
-import person2 from "./person2.png"
-import person3 from "./person3.png"
+import star from "../assets/images/star.png"
+import person1 from "../assets/images/person1.png"
+import person2 from "../assets/images/person2.png"
+import person3 from "../assets/images/person3.png"
 
 function Reviews () {
 
