@@ -1,11 +1,4 @@
-
-
-const Home = () =>{
-    return (
-        <div className="page-container">
-           
-        </div>
-    )
-
-}
+const Home = () => {
+  return <div className="page-container"></div>;
+};
 export default Home;
