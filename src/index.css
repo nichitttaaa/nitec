@@ -1,10 +1,10 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
-*{
- @apply box-border;
-
+* {
+  @apply box-border;
 }
+<<<<<<< HEAD
 body{
     width: 100vw;
     min-height: 100%;
@@ -14,3 +14,13 @@ body{
     @apply w-screen h-full;
 
 }
+=======
+body {
+  width: 100vw;
+  height: 100vh;
+  @apply bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] bg-no-repeat bg-cover m-0 p-0;
+}
+.page-container {
+  @apply w-screen h-full;
+}
+>>>>>>> 15c50fe (WIP call-to-action-card)
