@@ -23,7 +23,6 @@ export default function CartSummarySidebar({ subtotal }: Props) {
 
     return (
         <div className="w-full lg:w-1/3 bg-white rounded-xl shadow-lg p-6 h-fit mt-8">
-            {/* Sezione: Spedizione */}
             <h2 className="text-lg font-semibold mb-4">Calculated Shipping</h2>
 
             <form className="flex flex-col gap-4">
@@ -71,7 +70,6 @@ export default function CartSummarySidebar({ subtotal }: Props) {
 
             <div className="my-6 h-0.5 bg-gray-200" />
 
-            {/* Sezione: Codice sconto */}
             <div className="mt-6">
                 <h3 className="text-base font-semibold mb-2">Coupon Code</h3>
                 <p className="text-sm text-gray-500 mb-3">Enter your coupon code if you have one.</p>
@@ -87,7 +85,6 @@ export default function CartSummarySidebar({ subtotal }: Props) {
                 </div>
             </div>
 
-            {/* Sezione: Totale carrello */}
             <div className="mt-8 bg-orange-200 rounded-xl p-4">
                 <h3 className="text-base font-semibold mb-4">Cart Total</h3>
                 <div className="flex justify-between text-sm mb-2">

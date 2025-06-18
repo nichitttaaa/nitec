@@ -10,7 +10,6 @@ export default function CartSummary() {
     const productDisplay = cartItems.map((product, index) => (
         <div key={product.id}>
             <div className="grid [grid-template-columns:2fr_1fr_1fr_1fr] gap-4 items-center w-full px-6 py-4">
-                {/* Column 1: Image + description */}
                 <div className="flex gap-3 items-center">
                     <img className="w-24 md:w-28 h-auto object-cover rounded-2xl" src={product.imageSrc} alt="dress-img" />
                     <div className="flex flex-col gap-0.5">
@@ -27,10 +26,8 @@ export default function CartSummary() {
                     </div>
                 </div>
 
-                {/* Column 2: Price */}
                 <div className="text-sm font-medium text-center">{product.price} €</div>
 
-                {/* Column 3: Quantity */}
                 <div className="flex justify-center items-center gap-2 font-semibold">
                     <button
                         onClick={() => handleDecrement(product.id)}
@@ -49,8 +46,6 @@ export default function CartSummary() {
                     </button>
                 </div>
 
-
-                {/* Column 4: Total */}
                 <div className="text-s font-bold text-center text-orange-300">
                     {(product.price * product.quantity).toFixed(2)} €
                 </div>
@@ -87,7 +82,6 @@ export default function CartSummary() {
         <div className="w-full flex flex-col">
             <main className="flex-grow">
                 <div className="flex flex-col lg:flex-row gap-10 mx-4 md:mx-8 lg:mx-12">
-                    {/* Colonna sinistra: Titolo + tabella */}
                     <div className="w-full lg:w-2/3">
                         <div className="flex flex-col my-8">
                             <span className="text-2xl font-semibold">Shopping Bag</span>
@@ -104,8 +98,6 @@ export default function CartSummary() {
                             {productDisplay}
                         </div>
                     </div>
-
-                    {/* Colonna destra: Sidebar */}
                     <CartSummarySidebar subtotal={subtotal} />
                 </div>
             </main>
