@@ -9,12 +9,20 @@ export default function CartSummarySidebar({ subtotal }: Props) {
     // const [coupon, setCoupon] = useState("");
 
     // Discount Logic (now static)
+
+    const shippingThreshold = 50;
+    const baseShippingCost = 5;
+    const shippingCost = subtotal > shippingThreshold ? 0 : baseShippingCost;
+
     const percentageDiscount = 5;
-    const discount = subtotal * percentageDiscount / 100
-    const total = subtotal - discount;
+    const discount = (subtotal * percentageDiscount) / 100;
+    
+    const total = subtotal - discount + shippingCost;
+
+    
 
     return (
-        <div className="w-1/3 bg-white rounded-xl shadow-lg p-6 h-fit mt-8">
+        <div className="w-full lg:w-1/3 bg-white rounded-xl shadow-lg p-6 h-fit mt-8">
             {/* Sezione: Spedizione */}
             <h2 className="text-lg font-semibold mb-4">Calculated Shipping</h2>
 
@@ -88,7 +96,7 @@ export default function CartSummarySidebar({ subtotal }: Props) {
                 </div>
                 <div className="flex justify-between text-sm mb-2 text-gray-500 ">
                     <span>Shipping</span>
-                    <span>Free</span>
+                    <span>{shippingCost === 0 ? "Free" : `€${shippingCost.toFixed(2)}`}</span>
                 </div>
                 <div className="flex justify-between text-sm mb-2 text-green-600 font-semibold">
                     <span>Discount</span>

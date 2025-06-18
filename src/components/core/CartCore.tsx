@@ -12,10 +12,10 @@ export default function CartSummary() {
             <div className="grid [grid-template-columns:2fr_1fr_1fr_1fr] gap-4 items-center w-full px-6 py-4">
                 {/* Column 1: Image + description */}
                 <div className="flex gap-3 items-center">
-                    <img className="w-28 h-auto object-cover rounded-2xl" src={product.imageSrc} alt="dress-img" />
+                    <img className="w-24 md:w-28 h-auto object-cover rounded-2xl" src={product.imageSrc} alt="dress-img" />
                     <div className="flex flex-col gap-0.5">
-                        <span className="text-gray-400 text-xs">{product.gender}</span>
-                        <span className="font-semibold">{product.name}</span>
+                        <span className="text-gray-400 text-xs md:text-sm">{product.gender}</span>
+                        <span className="font-semibold text-sm md:text-base">{product.name}</span>
                         <div className="text-xs text-gray-400 mt-3" >
                             <span>Color: </span>
                             <span className="text-black font-medium">{product.color}</span>
@@ -34,7 +34,7 @@ export default function CartSummary() {
                 <div className="flex justify-center items-center gap-2 font-semibold">
                     <button
                         onClick={() => handleDecrement(product.id)}
-                        className="w-6 h-6 rounded bg-white border text-gray-500 hover:text-gray-700 font-mono leading-none"
+                        className="w-6 h-6 rounded bg-white border text-gray-500 hover:text-gray-700 font-mono leading-none cursor-pointer"
                     >
                         –
                     </button>
@@ -43,7 +43,7 @@ export default function CartSummary() {
 
                     <button
                         onClick={() => handleIncrement(product.id)}
-                        className="w-6 h-6 rounded bg-white border text-gray-500 hover:text-gray-700 font-mono leading-none"
+                        className="w-6 h-6 rounded bg-white border text-gray-500 hover:text-gray-700 font-mono leading-none cursor-pointer"
                     >
                         +
                     </button>
@@ -84,11 +84,11 @@ export default function CartSummary() {
 
 
     return (
-        <div className="w-full flex flex-col min-h-screen">
+        <div className="w-full flex flex-col">
             <main className="flex-grow">
-                <div className="flex gap-10 mx-12">
+                <div className="flex flex-col lg:flex-row gap-10 mx-4 md:mx-8 lg:mx-12">
                     {/* Colonna sinistra: Titolo + tabella */}
-                    <div className="w-2/3">
+                    <div className="w-full lg:w-2/3">
                         <div className="flex flex-col my-8">
                             <span className="text-2xl font-semibold">Shopping Bag</span>
                             <span>{cartItems.length} items in your bag.</span>

@@ -11,7 +11,10 @@ body{
     @apply min-h-screen bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] m-0 p-0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden
 }
 .page-container{
     @apply w-screen h-full;
 }
+
+

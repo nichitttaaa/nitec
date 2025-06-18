@@ -20,7 +20,7 @@ function InfoBox({
 
 export default function CartFooter() {
   return (
-    <div className="px-10 py-8 flex justify-between gap-4">
+    <div className="px-4 py-8 grid grid-cols-2 lg:flex gap-4">
       <InfoBox
         icon="🚚"
         title="Free Shipping"
