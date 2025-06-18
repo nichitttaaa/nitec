@@ -1,5 +1,5 @@
 import { MoveUpRight } from 'lucide-react';
-import castiImage from "../assets/imgCasti.jpg";
+import castiImage from "../../assets/images/imgCasti.jpg";
 
 const ProductSections = () => {
     const popularColors = [
@@ -11,7 +11,7 @@ const ProductSections = () => {
     ];
 
     return (
-        <div className="flex flex-col w-max p-5 space-y-4">
+        <div className="flex flex-col w-max gap-4 bg-[#F1F3F2] rounded-3xl">
             <div className="flex-1 flex flex-col justify-center p-6 rounded-lg bg-#E3E3E3 shadow-2xl border border-gray-400 m-4">
                 <h2 className="text-2xl text-gray-800 mb-6 ">Popular Colors</h2>
 

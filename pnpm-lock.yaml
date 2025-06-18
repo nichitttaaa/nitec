@@ -10,7 +10,10 @@ importers:
     dependencies:
       '@tailwindcss/vite':
         specifier: ^4.1.8
-        version: 4.1.8(vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1))
+        version: 4.1.8(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1))
+      dotenv:
+        specifier: ^16.5.0
+        version: 16.5.0
       lucide:
         specifier: ^0.513.0
         version: 0.513.0
@@ -23,11 +26,7 @@ importers:
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
-<<<<<<< HEAD
       react-router-dom:
-=======
-      react-router:
->>>>>>> origin/main
         specifier: ^7.6.2
         version: 7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       tailwindcss:
@@ -37,6 +36,9 @@ importers:
       '@eslint/js':
         specifier: ^9.25.0
         version: 9.28.0
+      '@types/node':
+        specifier: ^24.0.3
+        version: 24.0.3
       '@types/react':
         specifier: ^19.1.2
         version: 19.1.6
@@ -45,7 +47,7 @@ importers:
         version: 19.1.6(@types/react@19.1.6)
       '@vitejs/plugin-react':
         specifier: ^4.4.1
-        version: 4.5.1(vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1))
+        version: 4.5.1(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1))
       eslint:
         specifier: ^9.25.0
         version: 9.28.0(jiti@2.4.2)
@@ -66,7 +68,7 @@ importers:
         version: 8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
       vite:
         specifier: ^6.3.5
-        version: 6.3.5(jiti@2.4.2)(lightningcss@1.30.1)
+        version: 6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1)
 
 packages:
 
@@ -606,6 +608,9 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
+  '@types/node@24.0.3':
+    resolution: {integrity: sha512-R4I/kzCYAdRLzfiCabn9hxWfbuHS573x+r0dJMkkzThEa7pbrcDWK+9zu3e7aBOouf+rQAciqPFMnxwr0aWgKg==}
+
   '@types/react-dom@19.1.6':
     resolution: {integrity: sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==}
     peerDependencies:
@@ -771,6 +776,10 @@ packages:
   detect-libc@2.0.4:
     resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
     engines: {node: '>=8'}
+
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+    engines: {node: '>=12'}
 
   electron-to-chromium@1.5.165:
     resolution: {integrity: sha512-naiMx1Z6Nb2TxPU6fiFrUrDTjyPMLdTtaOd2oLmG8zVSg2hCWGkhPyxwk+qRmZ1ytwVqUv0u7ZcDA5+ALhaUtw==}
@@ -1074,12 +1083,9 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-<<<<<<< HEAD
   lucide@0.513.0:
     resolution: {integrity: sha512-c7gYh8As4tFHFk7j6xtog+1aLyKw0uDjT1wTXILVlRmmcOuArOv98LeWT1bWJqs/jqHXgRFbsmKmOMhsSAC2cg==}
 
-=======
->>>>>>> origin/main
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -1184,7 +1190,6 @@ packages:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
 
-<<<<<<< HEAD
   react-router-dom@7.6.2:
     resolution: {integrity: sha512-Q8zb6VlTbdYKK5JJBLQEN06oTUa/RAbG/oQS1auK1I0TbJOXktqm+QENEVJU6QvWynlXPRBXI3fiOQcSEA78rA==}
     engines: {node: '>=20.0.0'}
@@ -1192,8 +1197,6 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-=======
->>>>>>> origin/main
   react-router@7.6.2:
     resolution: {integrity: sha512-U7Nv3y+bMimgWjhlT5CRdzHPu2/KVmqPwKUCChW8en5P3znxUqwlYFlbmyj8Rgp1SF6zs5X4+77kBVknkg6a0w==}
     engines: {node: '>=20.0.0'}
@@ -1299,6 +1302,9 @@ packages:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  undici-types@7.8.0:
+    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
 
   update-browserslist-db@1.1.3:
     resolution: {integrity: sha512-UxhIZQ+QInVdunkDAaiazvvT/+fXL5Osr0JZlJulepYu6Jd7qJtDZjlur0emRlT71EN3ScPoE7gvsuIKKNavKw==}
@@ -1777,12 +1783,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.8
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.8
 
-  '@tailwindcss/vite@4.1.8(vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1))':
+  '@tailwindcss/vite@4.1.8(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1))':
     dependencies:
       '@tailwindcss/node': 4.1.8
       '@tailwindcss/oxide': 4.1.8
       tailwindcss: 4.1.8
-      vite: 6.3.5(jiti@2.4.2)(lightningcss@1.30.1)
+      vite: 6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1)
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -1808,6 +1814,10 @@ snapshots:
   '@types/estree@1.0.7': {}
 
   '@types/json-schema@7.0.15': {}
+
+  '@types/node@24.0.3':
+    dependencies:
+      undici-types: 7.8.0
 
   '@types/react-dom@19.1.6(@types/react@19.1.6)':
     dependencies:
@@ -1909,7 +1919,7 @@ snapshots:
       '@typescript-eslint/types': 8.33.1
       eslint-visitor-keys: 4.2.0
 
-  '@vitejs/plugin-react@4.5.1(vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1))':
+  '@vitejs/plugin-react@4.5.1(vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1))':
     dependencies:
       '@babel/core': 7.27.4
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.27.4)
@@ -1917,7 +1927,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.9
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 6.3.5(jiti@2.4.2)(lightningcss@1.30.1)
+      vite: 6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2000,6 +2010,8 @@ snapshots:
   deep-is@0.1.4: {}
 
   detect-libc@2.0.4: {}
+
+  dotenv@16.5.0: {}
 
   electron-to-chromium@1.5.165: {}
 
@@ -2291,11 +2303,8 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-<<<<<<< HEAD
   lucide@0.513.0: {}
 
-=======
->>>>>>> origin/main
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -2381,15 +2390,12 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
-<<<<<<< HEAD
   react-router-dom@7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       react-router: 7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
-=======
->>>>>>> origin/main
   react-router@7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       cookie: 1.0.2
@@ -2498,6 +2504,8 @@ snapshots:
 
   typescript@5.8.3: {}
 
+  undici-types@7.8.0: {}
+
   update-browserslist-db@1.1.3(browserslist@4.25.0):
     dependencies:
       browserslist: 4.25.0
@@ -2508,7 +2516,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1):
+  vite@6.3.5(@types/node@24.0.3)(jiti@2.4.2)(lightningcss@1.30.1):
     dependencies:
       esbuild: 0.25.5
       fdir: 6.4.5(picomatch@4.0.2)
@@ -2517,6 +2525,7 @@ snapshots:
       rollup: 4.41.1
       tinyglobby: 0.2.14
     optionalDependencies:
+      '@types/node': 24.0.3
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.30.1

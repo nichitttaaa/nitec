@@ -1,9 +1,9 @@
 import BoxProduct from "../components/products/BoxForProduct.tsx";
-import moveOME from "../components/assets/productsImg/moveOEM.png"
-import marshall from "../components/assets/productsImg/marshallBej.png"
-import sony from "../components/assets/productsImg/sonyBej.png"
-import xiaomi from "../components/assets/productsImg/xiaomiRoz.png"
-import huawei from "../components/assets/productsImg/huaweiBlue.png"
+import moveOME from "../assets/productsImg/moveOEM.png"
+import marshall from "../assets/productsImg/marshallBej.png"
+import sony from "../assets/productsImg/sonyBej.png"
+import xiaomi from "../assets/productsImg/xiaomiRoz.png"
+import huawei from "../assets/productsImg/huaweiBlue.png"
 
 const products = [
     {

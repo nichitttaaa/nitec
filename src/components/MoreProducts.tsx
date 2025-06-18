@@ -1,7 +1,7 @@
-import  first  from "./first.png"
-import  second  from "./second.png"
-import  third  from "./third.png"
-import heart from "./heart.png"
+import  first  from "../assets/images/first.png"
+import  second  from "../assets/images/second.png"
+import  third  from "../assets/images/third.png"
+import heart from "../assets/images/heart.png"
 
 function MoreProducts () {
 

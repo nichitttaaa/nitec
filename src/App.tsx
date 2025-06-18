@@ -1,5 +1,5 @@
 import router from "./router.tsx";
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import NavBarLayout from "./layouts/NavBarLayout.tsx";
 
 function App() {
