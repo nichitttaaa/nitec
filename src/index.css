@@ -7,20 +7,19 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100%;
   @apply bg-gradient-to-b from-[#D2DBDD] via-[#E0E6DB] to-[#EDEEDB] bg-no-repeat bg-cover m-0 p-0;
 }
-
 .page-container {
   @apply w-screen h-full overflow-auto;
 }
 
-@layer utilities {
-    .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-    }
+@layer utilities{
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

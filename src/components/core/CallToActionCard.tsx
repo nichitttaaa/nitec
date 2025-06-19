@@ -6,6 +6,7 @@ const cardData = [
 ]
 
 const CTAcard = () => {
+
   return (
     <section className="bg-[#F1F3F2] w-full max-w-[1000px] ml-4 rounded-3xl px-6 py-12 flex flex-col md:flex-row  gap-10">
 
