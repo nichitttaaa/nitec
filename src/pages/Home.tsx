@@ -8,6 +8,7 @@ const Home = () => {
             <NavBar></NavBar>
             <div className="bottom-right-box bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url('/img/woman.jpg')" }}
             >
+                
                 <div className="smaller-cover ">
                     <h2>Light Grey Surface </h2>
                     <h2>Headphone</h2>

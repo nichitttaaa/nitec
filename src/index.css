@@ -21,7 +21,7 @@ body {
 }
 
 .bottom-right-box {
-    @apply absolute bg-(image:<../>) w-50 h-75 rounded-xl top-67 left-220
+    @apply absolute  w-50 h-75 rounded-xl top-67 left-220
 }
 
 .smaller-cover {
