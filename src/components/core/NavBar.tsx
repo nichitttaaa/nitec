@@ -6,8 +6,8 @@ function NavBar () {
     const navigate = useNavigate();
 
     return (
-        <div className="w-screen h-auto px-4 py-2 flex items-center justify-center">
-        <div className="w-full h-[75px] bg-[#EAF1F1] rounded-4xl justify-between flex items-center  p-2">
+        <div className="w-screen h-auto px-50 md:px-30 py-2 flex items-center justify-center">
+        <div className="w-full  bg-[#EAF1F1] rounded-4xl justify-between flex items-center  p-2">
             <div className="w-[150px] h-[60px] rounded-4xl  bg-[#E4EBED] flex items-center cursor-pointer" onClick={() =>{
                 navigate("/")
             }}>
