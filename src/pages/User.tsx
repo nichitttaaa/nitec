@@ -9,7 +9,7 @@ import {
 
 const User = () => {
   return (
-    <div className=" w-full px-4 sm:px-8 md:px-16 lg:px-32 py-8  ">
+    <div className=" overflow-auto w-full px-4 sm:px-8 md:px-16 lg:px-32 py-8  ">
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-bold">Nespola Account</h1>
         <button className="bg-orange-600 text-white rounded-2xl px-4 py-1 cursor-pointer hover:bg-orange-700 transition">
