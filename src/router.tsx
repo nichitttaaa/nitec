@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Liked from "./pages/Liked";
 import User from "./pages/User";
+import Register from "./pages/Register.tsx";
 
 const router = [
   {
@@ -25,6 +26,11 @@ const router = [
     element: <User />,
     showNavBar: true,
   },
+  {
+    path: "/register",
+    element: <Register />,
+    showNavBar: false,
+  }
 ];
 
 
