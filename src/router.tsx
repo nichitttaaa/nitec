@@ -1,3 +1,4 @@
+import LoginPage from "./pages/LoginPage";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Liked from "./pages/Liked";
@@ -28,6 +29,11 @@ const router = [
   {
     path: "/register",
     element: <Register />,
+    showNavBar: true,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
     showNavBar: true,
   },
 ];
