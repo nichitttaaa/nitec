@@ -1,4 +1,3 @@
-
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Liked from "./pages/Liked";
@@ -29,9 +28,8 @@ const router = [
   {
     path: "/register",
     element: <Register />,
-    showNavBar: false,
-  }
+    showNavBar: true,
+  },
 ];
-
 
 export default router;

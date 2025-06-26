@@ -9,7 +9,7 @@ export interface RegisterData {
     firstName: string,
     lastName: string,
     password: string,
-    phoneNumber: string
+    phoneNumber?: string
 }
 
 export interface RegisterResponse {
