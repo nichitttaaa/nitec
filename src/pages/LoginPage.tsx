@@ -7,20 +7,43 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
+  const [emailErrorMesage, setEmailErrorMesage] = useState("");
+
   const [password, setPassword] = useState("");
+  const [passwordErrorMesage, setPasswordErrorMesage] = useState("");
 
   const isDisabled = email === "" || password === "";
 
   const onLogin = () => {
+    if (!email.includes("@")) {
+      setEmailErrorMesage("Email must contain @");
+      return;
+    } else {
+      setEmailErrorMesage("");
+    }
+    if (password.length < 6) {
+      setPasswordErrorMesage("Password must contain more than 6 characters");
+      return;
+    } else {
+      setPasswordErrorMesage("");
+    }
     const payload: LoginData = {
       email: email,
       password: password,
     };
-    login(payload).then((data) => {
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
-      navigate("/products");
-    });
+    login(payload)
+      .then((data) => {
+        localStorage.setItem("accessToken", data.accessToken);
+        localStorage.setItem("refreshToken", data.refreshToken);
+        navigate("/products");
+      })
+      .catch((err) => {
+        if (err.response.data.message === "Wrong Credentials") {
+          setPasswordErrorMesage("Wrong Password");
+        } else if (err.response.data.message === "User with this email do not exist") {
+          setEmailErrorMesage("User with this email do not exist");
+        }
+      });
   };
 
   return (
@@ -34,34 +57,39 @@ const LoginPage = () => {
       >
         <h2 className="text-3xl font-bold text-center text-white mb-6">Login</h2>
 
-        <div
-          className="space-y-4"
-          // onSubmit={() => {
-          //   onLogin();
-          // }}
-        >
-          <input
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            type="Email"
-            placeholder="Email"
-            className="w-full px-4 py-2 bg-transparent
+        <div className="space-y-4">
+          <div className="w-full flex flex-col items-start gap-1">
+            <input
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              type="Email"
+              placeholder="Email"
+              className="w-full px-4 py-2 bg-transparent
             border border-gray-300 rounded text-while placegolder-gray-400 focus: outline-none focus:ring-2
             focus: ring-green-500"
-          />
-          <input
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            type="password"
-            placeholder="Password"
-            className="w-full px-4 py-2 bg-transparent
+            />
+            {emailErrorMesage !== "" && <span className="text-red-500">{emailErrorMesage}</span>}
+          </div>
+
+          <div className="w-full flex flex-col items-start gap-1">
+            <input
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              type="password"
+              placeholder="Password"
+              className="w-full px-4 py-2 bg-transparent
             border border-gray-300 rounded text-while placegolder-gray-400 focus: outline-none focus:ring-2
             focus: ring-green-500"
-          />
+            />
+            {passwordErrorMesage !== "" && (
+              <span className="text-red-500">{passwordErrorMesage}</span>
+            )}
+          </div>
+
           <button
             type="button"
             className="w-full py-2 bg-black text-white rounded-full border border-white 

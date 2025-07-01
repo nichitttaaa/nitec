@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { register } from "../api/requests";
 import type { RegisterData } from "../api/types";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -10,7 +11,12 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [emailErrorMesage, setEmailErrorMesage] = useState("");
+  const [passwordErrorMesage, setPasswordErrorMesage] = useState("");
+
   const navigate = useNavigate();
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm;
 
   const isDisabled =
     firstName === "" ||
@@ -27,11 +33,15 @@ const Register = () => {
       lastName: secondName,
       password: password,
     };
-    register(payload).then((data) => {
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
-      navigate("/products");
-    });
+    register(payload)
+      .then((data) => {
+        localStorage.setItem("accessToken", data.accessToken);
+        localStorage.setItem("refreshToken", data.refreshToken);
+        navigate("/products");
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
   };
 
   return (
@@ -54,16 +64,25 @@ const Register = () => {
             <h3 className="text-2xl font-bold mb-8">Create your account</h3>
 
             <div className="space-y-6 mb-10">
-              <div>
-                <label className="block text-lg mb-2">Email</label>
+              <div className="w-full flex flex-col items-start gap-1">
+                <label className="block text-lg">Email</label>
                 <input
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
+                    if (emailRegex.test(e.target.value)) {
+                      setEmailErrorMesage("");
+                    } else {
+                      setEmailErrorMesage("Email is not valid");
+                    }
                   }}
                   type="email"
                   className="w-full bg-transparent border-b-2 border-white focus:outline-none focus:border-blue-300 py-3"
+                  style={{ borderColor: emailErrorMesage === "" ? "white" : "red" }}
                 />
+                {emailErrorMesage !== "" && (
+                  <span className="text-red-500">{emailErrorMesage}</span>
+                )}
               </div>
 
               <div>
@@ -90,16 +109,26 @@ const Register = () => {
                 />
               </div>
 
-              <div>
-                <label className="block text-lg mb-2">Password</label>
+              <div className="w-full flex flex-col items-start gap-1">
+                <label className="block text-lg">Password</label>
                 <input
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
+                    if (passwordRegex.test(e.target.value)) {
+                      setPasswordErrorMesage("");
+                    } else {
+                      setPasswordErrorMesage("Password must have number,symbol and uppercase");
+                    }
                   }}
                   type="password"
-                  className="w-full bg-transparent border-b-2 border-white focus:outline-none focus:border-blue-300 py-3"
+                  className={`w-full bg-transparent border-b-2 focus:outline-none py-3 ${
+                    passwordErrorMesage !== "" ? "border-red-500" : "border-white"
+                  }`}
                 />
+                {passwordErrorMesage !== "" && (
+                  <span className="text-red-500">{passwordErrorMesage}</span>
+                )}
               </div>
 
               <div>
@@ -112,6 +141,9 @@ const Register = () => {
                   type="password"
                   className="w-full bg-transparent border-b-2 border-white focus:outline-none focus:border-blue-300 py-3"
                 />
+                {password !== confirmPassword && confirmPassword !== "" && (
+                  <span className="text-red-500">Passwords does not match</span>
+                )}
               </div>
             </div>
 
