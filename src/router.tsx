@@ -1,9 +1,10 @@
-import LoginPage from "./pages/LoginPage";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import Liked from "./pages/Liked";
-import User from "./pages/User";
-import Register from "./pages/Register.tsx";
+import LoginPage from "./Pages/LoginPage";
+import Home from "./Pages/Home";
+import Cart from "./Pages/Cart";
+import Liked from "./Pages/Liked";
+import User from "./Pages/User";
+import Register from "./Pages/Register.tsx";
+import AllProducts from "./Pages/AllProducts.tsx";
 
 const router = [
   {
@@ -34,6 +35,11 @@ const router = [
   {
     path: "/login",
     element: <LoginPage />,
+    showNavBar: true,
+  },
+  {
+    path: "/products",
+    element: <AllProducts />,
     showNavBar: true,
   },
 ];
