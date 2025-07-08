@@ -15,3 +15,8 @@ export const getMySelf = async () => {
     const response = await api.get<MySelfResponse>("/user/profile/myself")
     return response.data
 }
+
+export const refresh = async (token: string) =>{
+    const response = await api.get("auth/refresh", {headers: {authorization: `Bearer ${token}`}})
+    return response.data
+}

@@ -2,8 +2,11 @@ import router from "./router.tsx";
 import { Route, Routes } from "react-router-dom";
 import NavBarLayout from "./layouts/NavBarLayout.tsx";
 import { ToastContainer } from "react-toastify";
+import useAuthGuard from "./hooks/useAuthGuard.tsx";
 
 function App() {
+    useAuthGuard()
+
   return (
     <>
       <ToastContainer position="bottom-right" draggable />

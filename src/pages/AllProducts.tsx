@@ -5,6 +5,7 @@ import sony from "../assets/productsImg/sonyBej.png"
 import xiaomi from "../assets/productsImg/xiaomiRoz.png"
 import huawei from "../assets/productsImg/huaweiBlue.png"
 
+
 const products = [
     {
         id: 1,
@@ -50,6 +51,7 @@ const products = [
 ]
 
 const AllProducts = () => {
+
 
     return (
         <div className="page-container w-screen h-auto px-4 py-2 flex flex-wrap gap-4 justify-center">
