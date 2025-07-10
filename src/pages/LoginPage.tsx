@@ -82,7 +82,7 @@ const LoginPage = () => {
                             type="password"
                             placeholder="Password"
                             className="w-full px-4 py-2 bg-transparent
-            border border-gray-300 rounded text-while placegolder-gray-400 focus: outline-none focus:ring-2
+            border border-gray-300 rounded text-while placeholder-gray-400 focus: outline-none focus:ring-2
             focus: ring-green-500"
                         />
                         {passwordErrorMesage !== "" && (
