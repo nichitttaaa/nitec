@@ -23,7 +23,7 @@ const router = [
     showNavBar: true,
   },
   {
-    path: "/user",
+    path: "/user/:id",
     element: <User />,
     showNavBar: true,
   },
