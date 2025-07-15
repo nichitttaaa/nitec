@@ -1,10 +1,10 @@
-import LoginPage from "./Pages/LoginPage";
-import Home from "./Pages/Home";
-import Cart from "./Pages/Cart";
-import Liked from "./Pages/Liked";
-import User from "./Pages/User";
-import Register from "./Pages/Register.tsx";
-import AllProducts from "./Pages/AllProducts.tsx";
+import AllProducts from "./pages/AllProducts";
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import Liked from "./pages/Liked";
+import LoginPage from "./pages/LoginPage";
+import Register from "./pages/Register";
+import User from "./pages/User";
 
 const router = [
   {
