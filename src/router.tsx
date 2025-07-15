@@ -5,6 +5,7 @@ import Liked from "./pages/Liked";
 import LoginPage from "./pages/LoginPage";
 import Register from "./pages/Register";
 import User from "./pages/User";
+import Users from "./pages/Users";
 
 const router = [
   {
@@ -42,6 +43,12 @@ const router = [
     element: <AllProducts />,
     showNavBar: true,
   },
+
+  {
+    path: "/users",
+    element: <Users />,
+    showNavBar: true,
+  }
 ];
 
 export default router;

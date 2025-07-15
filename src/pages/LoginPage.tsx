@@ -1,9 +1,12 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import type {LoginData} from "../api/types";
-import {login} from "../api/requests";
+import {getMySelf, login} from "../api/requests";
+import {useUserStore} from "../stores/useUserStore.ts";
 
 const LoginPage = () => {
+    const {setUser} = useUserStore();
+
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
@@ -35,7 +38,11 @@ const LoginPage = () => {
             .then((data) => {
                 localStorage.setItem("accessToken", data.accessToken);
                 localStorage.setItem("refreshToken", data.refreshToken);
-                navigate("/products");
+                getMySelf().then((data) => {
+                    setUser(data)
+                    navigate("/products");
+                })
+
             })
             .catch((err) => {
                 if (err.response.data.message === "Wrong Credentials") {

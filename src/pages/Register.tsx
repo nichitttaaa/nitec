@@ -1,10 +1,12 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {register} from "../api/requests";
+import {getMySelf, register} from "../api/requests";
 import type {RegisterData} from "../api/types";
 import {toast} from "react-toastify";
+import {useUserStore} from "../stores/useUserStore.ts";
 
 const Register = () => {
+    const {setUser} = useUserStore();
     const [firstName, setFirstName] = useState("");
     const [secondName, setSecondName] = useState("");
     const [email, setEmail] = useState("");
@@ -37,7 +39,10 @@ const Register = () => {
             .then((data) => {
                 localStorage.setItem("accessToken", data.accessToken);
                 localStorage.setItem("refreshToken", data.refreshToken);
-                navigate("/products");
+                getMySelf().then((data) => {
+                    setUser(data)
+                    navigate("/products");
+                })
             })
             .catch((err) => {
                 toast.error(err.response.data.message);

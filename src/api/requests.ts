@@ -33,3 +33,9 @@ export const getUserById = async (id: string) => {
   });
   return response.data;
 };
+
+export const getAllUsers = async () => {
+  const response = await api.get<MySelfResponse[]>("/user/profile");
+  return response.data;
+
+}

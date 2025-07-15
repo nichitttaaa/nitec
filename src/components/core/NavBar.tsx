@@ -1,15 +1,19 @@
 import { LogIn, MailPlus, ShoppingBasket, Heart, LogOut, UserIcon } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { getMySelf } from "../../api/requests.ts";
-import type { MySelfResponse } from "../../api/types.ts";
+
+import {useUserStore} from "../../stores/useUserStore.ts";
+import {Users} from "lucide-react";
 
 function NavBar() {
+  const {user, setUser, clear} = useUserStore();
+
   const navigate = useNavigate();
-  const token = localStorage.getItem("accessToken");
-  const [user, setUser] = useState<MySelfResponse | null>(null);
+
+
   useEffect(() => {
-    if (token) {
+    if (!user) {
       getMySelf().then((data) => {
         setUser(data);
       });
@@ -31,7 +35,7 @@ function NavBar() {
           </div>
         </div>
 
-        {token ? (
+        {user ? (
           <div className=" flex items-center gap-4">
             <NavLink to="/cart" end>
               <button className="p-4 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all">
@@ -47,9 +51,20 @@ function NavBar() {
               <Heart fill="#FF0000" stroke="#FF0000" />
             </button>
             <button
+                onClick={() => {
+
+                  navigate("/users");
+                }}
+                className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
+            >
+              <span className="font-semibold hidden md:flex">Users</span>
+              <Users />
+            </button>
+            <button
               onClick={() => {
                 localStorage.removeItem("accessToken");
                 localStorage.removeItem("refreshToken");
+                clear()
                 navigate("/");
               }}
               className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
