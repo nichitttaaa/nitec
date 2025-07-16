@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66848189-b60c-4f91-a36b-2b5a53a956bf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/nitec/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/public/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/public/locales/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/public/locales/ro/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/public/locales/ro/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/api/requests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/api/requests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/api/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/api/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/components/MoreProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/components/MoreProducts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/components/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/components/Reviews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/components/core/CallToActionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/components/core/CallToActionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/components/core/CastiBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/components/core/CastiBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/components/core/Colors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/components/core/Colors.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/components/core/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/components/core/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/components/products/BoxForProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/components/products/BoxForProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/hooks/useAuthGuard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/hooks/useAuthGuard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/i18next.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/i18next.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/pages/AllProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/pages/AllProducts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/pages/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/pages/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/pages/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/pages/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nitec/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nitec/src/router.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/nitec" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2yK5ROvf72AAsWMNLKcATm9jFWV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\andre\\Desktop\\CursReact\\nitec\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\Desktop\CursReact\nitec\src\assets\images" />
+      <recent name="C:\Users\andre\Desktop\CursReact\nitec\src\assets" />
+      <recent name="C:\Users\andre\Desktop\CursReact\nitec\src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66848189-b60c-4f91-a36b-2b5a53a956bf" name="Changes" comment="" />
+      <created>1749570416112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749570416112</updated>
+      <workItem from="1749570417130" duration="7507000" />
+      <workItem from="1749718534595" duration="24383000" />
+      <workItem from="1749753172337" duration="22000" />
+      <workItem from="1749753294524" duration="11000" />
+      <workItem from="1750159970369" duration="168000" />
+      <workItem from="1750160264819" duration="704000" />
+      <workItem from="1750168550663" duration="1284000" />
+      <workItem from="1750174006854" duration="9942000" />
+      <workItem from="1750241673527" duration="16006000" />
+      <workItem from="1750326163435" duration="8544000" />
+      <workItem from="1750345001404" duration="10555000" />
+      <workItem from="1750579778377" duration="19000" />
+      <workItem from="1750775132385" duration="53000" />
+      <workItem from="1750775195744" duration="7000" />
+      <workItem from="1750775558030" duration="1587000" />
+      <workItem from="1750785761960" duration="6000" />
+      <workItem from="1750937406535" duration="4500000" />
+      <workItem from="1750952138362" duration="10598000" />
+      <workItem from="1751977591479" duration="30000" />
+      <workItem from="1751977639080" duration="14624000" />
+      <workItem from="1752148739513" duration="1123000" />
+      <workItem from="1752161262243" duration="305000" />
+      <workItem from="1752170789936" duration="574000" />
+      <workItem from="1752515557643" duration="2320000" />
+      <workItem from="1752590993535" duration="10759000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="add-design" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
