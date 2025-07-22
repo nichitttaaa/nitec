@@ -4,6 +4,7 @@ import marshall from "../assets/productsImg/marshallBej.png"
 import sony from "../assets/productsImg/sonyBej.png"
 import xiaomi from "../assets/productsImg/xiaomiRoz.png"
 import huawei from "../assets/productsImg/huaweiBlue.png"
+import {useUserStore} from "../stores/useUserStore.ts";
 
 
 const products = [
@@ -51,7 +52,8 @@ const products = [
 ]
 
 const AllProducts = () => {
-
+const {user} = useUserStore()
+    console.log(user)
 
     return (
         <div className="page-container w-screen h-auto px-4 py-2 flex flex-wrap gap-4 justify-center">

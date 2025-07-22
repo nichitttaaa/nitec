@@ -40,3 +40,5 @@ export interface MySelfResponse {
     role: UserRoleEnum
 }
 
+export type User = MySelfResponse
+

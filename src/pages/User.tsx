@@ -6,8 +6,10 @@ import { Button } from "@material-tailwind/react";
 import { getUserById } from "../api/requests";
 import type { MySelfResponse } from "../api/types";
 import moment from "moment";
+/*import {useUserStore} from "../stores/useUserStore.ts";*/
 
 const User = () => {
+ /* const {user} = useUserStore() */
   const [user, setUser] = useState<MySelfResponse | null>(null);
   const { id } = useParams();
 
@@ -20,6 +22,7 @@ const User = () => {
   }, []);
 
   const { t, i18n } = useTranslation();
+
 
   return (
     <div className=" overflow-auto w-full px-4 sm:px-8 md:px-16 lg:px-32 py-8  ">
