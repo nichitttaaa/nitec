@@ -1,4 +1,4 @@
-import { LogIn, MailPlus, ShoppingBasket, Heart, LogOut, UserIcon } from "lucide-react";
+import { LogIn, MailPlus, ShoppingBasket, Heart, LogOut, UserIcon, PackageSearch } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect} from "react";
 import { getMySelf } from "../../api/requests.ts";
@@ -60,6 +60,16 @@ function NavBar() {
               <span className="font-semibold hidden md:flex">Users</span>
               <Users />
             </button>
+             <button
+                onClick={() => {
+
+                  navigate("/products");
+                }}
+                className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
+            >
+              <span className="font-semibold hidden md:flex">Products</span>
+              <PackageSearch />
+            </button>
             <button
               onClick={() => {
                 localStorage.removeItem("accessToken");
@@ -89,7 +99,12 @@ function NavBar() {
 
               <UserIcon />
             </button>
+
+              
+
           </div>
+
+
         ) : (
           <div className=" flex items-center gap-4">
             <button
