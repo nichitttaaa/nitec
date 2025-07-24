@@ -40,5 +40,35 @@ export interface MySelfResponse {
     role: UserRoleEnum
 }
 
+export interface PaginationParams {
+    order: OrderType;
+    page: number;
+    take:number
+}
+
+export enum OrderType{
+    ASC = "ASC",
+    DESC = "DESC"
+}
+
+export interface PaginationMeta {
+    hasNextPage: boolean,
+    hasPreviousPage: boolean,
+    itemCount: number,
+    page: string,
+    pageCount: number,
+    take: string
+}
+
+export interface ProductsResponse {
+    category: string,
+    createdAt: Date,
+    deletedAt: Date | null,
+    name: string,
+    id: string,
+    updatedAt: Date,
+    price: number
+}
+
 export type User = MySelfResponse
 

@@ -1,68 +1,54 @@
-import BoxProduct from "../components/products/BoxForProduct.tsx";
-import moveOME from "../assets/productsImg/moveOEM.png"
-import marshall from "../assets/productsImg/marshallBej.png"
-import sony from "../assets/productsImg/sonyBej.png"
-import xiaomi from "../assets/productsImg/xiaomiRoz.png"
-import huawei from "../assets/productsImg/huaweiBlue.png"
-import {useUserStore} from "../stores/useUserStore.ts";
+import { useEffect, useState } from "react";
+import { getAllProducts } from "../api/requests";
+import { OrderType, type PaginationParams, type ProductsResponse } from "../api/types";
+import BoxProduct from "../components/products/BoxForProduct";
+import CustomPagination from "../components/core/CustomPagination";
 
 
-const products = [
-    {
-        id: 1,
-        img: moveOME,
-        name: "OEM",
-        description: "Casti Wireless P9 BT connection answer call si FM Alb",
-        price: "52 EUR",
-        isLikedBtn: true,
-    },
-    {
-        id: 2,
-        img: marshall,
-        name: "MARSHALL",
-        description: "Casti Wireless P9 BT connection answer call si FM Alb",
-        price: "100 EUR",
-        isLikedBtn: true,
 
-    },
-    {
-        id: 3,
-        img: sony,
-        name:"SONY",
-        description: "Casti Wireless P9 BT connection answer call si FM Alb",
-        price: "75 EUR",
-        isLikedBtn: true,
-    },
-    {
-        id: 4,
-        img: xiaomi,
-        name: "XIAOMI",
-        description: "Casti Wireless P9 BT connection answer call si FM Alb",
-        price: "49 EUR",
-        isLikedBtn: true,
-    },
-    {
-        id: 5,
-        img:huawei,
-        name:"Huawei",
-        description: "Huawei FreeBuds 6i",
-        price: "55 EUR",
-        isLikedBtn: true,
-    }
-]
 
 const AllProducts = () => {
-const {user} = useUserStore()
-    console.log(user)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [take, setTake] = useState(10)
+    const [totalItems, setTotalItems] = useState(0)
+    const [products, setProducts] = useState<ProductsResponse[]>([])
+
+    useEffect(() => {
+        const params: PaginationParams = {
+            order: OrderType.ASC,
+            page: currentPage,
+            take: take
+        }
+        getAllProducts(params).then((data) => {
+            setProducts(data.data)
+            setTotalItems(data.meta.itemCount)
+        })
+    }, [currentPage, take])
+
+
 
     return (
-        <div className="page-container w-screen h-auto px-4 py-2 flex flex-wrap gap-4 justify-center">
-            {products.map((item) => (
-                <BoxProduct key={item.id} img={item.img} name={item.name}  description={item.description}
-                price={item.price}
-                isLikedBtn={item.isLikedBtn}/>
-            ))}
+        <div className="page-container w-screen h-auto flex items-center flex-col gap-8 p-9">
+
+            <h1>Products</h1>
+
+            <div className="w-screen h-max px-4 py-2 flex flex-wrap gap-4 justify-center">
+
+                {products.map((item) => (
+                    <BoxProduct key={item.id} name={item.name} price={item.price}
+                    />
+                ))}
+            </div>
+
+
+
+                <CustomPagination
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                totalItems={totalItems}
+                take={take}/>
         </div>
+
     )
 }
 

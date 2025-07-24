@@ -5,6 +5,9 @@ import type {
   MySelfResponse,
   RegisterData,
   RegisterResponse,
+  PaginationParams,
+  PaginationMeta,
+  ProductsResponse
 } from "./types.ts";
 
 export const register = async (data: RegisterData): Promise<RegisterResponse> => {
@@ -38,4 +41,11 @@ export const getAllUsers = async () => {
   const response = await api.get<MySelfResponse[]>("/user/profile");
   return response.data;
 
+}
+
+export const getAllProducts = async (params: PaginationParams): Promise<{ meta: PaginationMeta, data: ProductsResponse[] }> => {
+  const response = await api.get("/product", {
+    params
+  })
+  return response.data
 }
