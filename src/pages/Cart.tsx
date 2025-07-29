@@ -1,7 +1,4 @@
-
-const Cart =() =>{
-    return (
-        <div className="page-container">Cart</div>
-    )
-}
+const Cart = () => {
+  return <div className="page-container">Cart</div>;
+};
 export default Cart;

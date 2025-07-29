@@ -1,16 +1,23 @@
-import { LogIn, MailPlus, ShoppingBasket, Heart, LogOut, UserIcon, PackageSearch } from "lucide-react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect} from "react";
-import { getMySelf } from "../../api/requests.ts";
+import {
+  LogIn,
+  MailPlus,
+  ShoppingBasket,
+  Heart,
+  LogOut,
+  UserIcon,
+  PackageSearch,
+} from 'lucide-react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { getMySelf } from '../../api/requests.ts';
 
-import {useUserStore} from "../../stores/useUserStore.ts";
-import {Users} from "lucide-react";
+import { useUserStore } from '../../stores/useUserStore.ts';
+import { Users } from 'lucide-react';
 
 function NavBar() {
-  const {user, setUser, clear} = useUserStore();
+  const { user, setUser, clear } = useUserStore();
 
   const navigate = useNavigate();
-
 
   useEffect(() => {
     if (!user) {
@@ -26,7 +33,7 @@ function NavBar() {
         <div
           className="w-[150px] h-[60px] rounded-4xl  bg-[#E4EBED] flex items-center cursor-pointer"
           onClick={() => {
-            navigate("/");
+            navigate('/');
           }}
         >
           <div className="ml-7">
@@ -44,38 +51,36 @@ function NavBar() {
             </NavLink>
             <button
               onClick={() => {
-                navigate("/liked");
+                navigate('/liked');
               }}
               className="p-4 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >
               <Heart fill="#FF0000" stroke="#FF0000" />
             </button>
             <button
-                onClick={() => {
-
-                  navigate("/users");
-                }}
-                className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
+              onClick={() => {
+                navigate('/users');
+              }}
+              className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >
               <span className="font-semibold hidden md:flex">Users</span>
               <Users />
             </button>
-             <button
-                onClick={() => {
-
-                  navigate("/products");
-                }}
-                className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
+            <button
+              onClick={() => {
+                navigate('/products');
+              }}
+              className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >
               <span className="font-semibold hidden md:flex">Products</span>
               <PackageSearch />
             </button>
             <button
               onClick={() => {
-                localStorage.removeItem("accessToken");
-                localStorage.removeItem("refreshToken");
-                clear()
-                navigate("/");
+                localStorage.removeItem('accessToken');
+                localStorage.removeItem('refreshToken');
+                clear();
+                navigate('/');
               }}
               className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >
@@ -85,7 +90,7 @@ function NavBar() {
 
             <button
               onClick={() => {
-                navigate("/user");
+                navigate('/user');
               }}
               className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >
@@ -99,17 +104,12 @@ function NavBar() {
 
               <UserIcon />
             </button>
-
-              
-
           </div>
-
-
         ) : (
           <div className=" flex items-center gap-4">
             <button
               onClick={() => {
-                navigate("/login");
+                navigate('/login');
               }}
               className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >
@@ -118,7 +118,7 @@ function NavBar() {
             </button>
             <button
               onClick={() => {
-                navigate("/register");
+                navigate('/register');
               }}
               className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >

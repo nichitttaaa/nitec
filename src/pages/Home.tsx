@@ -1,8 +1,8 @@
-import CallToActionCard from "../components/core/CallToActionCard.tsx";
-import MoreProducts from "../components/MoreProducts.tsx";
-import Reviews from "../components/Reviews.tsx";
-import Colors from "../components/core/Colors.tsx";
-import CastiBox from "../components/core/CastiBox.tsx";
+import CallToActionCard from '../components/core/CallToActionCard.tsx';
+import MoreProducts from '../components/MoreProducts.tsx';
+import Reviews from '../components/Reviews.tsx';
+import Colors from '../components/core/Colors.tsx';
+import CastiBox from '../components/core/CastiBox.tsx';
 
 const Home = () => {
   return (
