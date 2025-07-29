@@ -28,9 +28,9 @@ const AllProducts = () => {
 
 
     return (
-        <div className="page-container w-screen h-auto flex items-center flex-col gap-8 p-9">
+        <div className="page-container w-screen h-auto flex items-center flex-col gap-8 p-9 ">
 
-            <h1>Products</h1>
+            <h1 className="text-gray-900 text-5xl font-serif">Products</h1>
 
             <div className="w-screen h-max px-4 py-2 flex flex-wrap gap-4 justify-center">
 
