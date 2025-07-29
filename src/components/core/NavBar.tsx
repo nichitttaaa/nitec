@@ -13,10 +13,11 @@ import { getMySelf } from '../../api/requests.ts';
 
 import { useUserStore } from '../../stores/useUserStore.ts';
 import { Users } from 'lucide-react';
+import {useCartStore} from "../../stores/userCartStore.ts";
 
 function NavBar() {
   const { user, setUser, clear } = useUserStore();
-
+const {cartProducts} = useCartStore();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,8 +46,11 @@ function NavBar() {
         {user ? (
           <div className=" flex items-center gap-4">
             <NavLink to="/cart" end>
-              <button className="p-4 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all">
+              <button className="relative p-4 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all">
                 <ShoppingBasket />
+                {cartProducts.length > 0 && (
+                    <div className="absolute top-0 right-0 flex items-center justify-center text-center text-white rounded-full bg-red-500 size-6">{cartProducts.length}</div>
+                )}
               </button>
             </NavLink>
             <button
