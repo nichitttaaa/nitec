@@ -7,11 +7,8 @@ import {
 } from '../api/types';
 import BoxProduct from '../components/products/BoxForProduct';
 import CustomPagination from '../components/core/CustomPagination';
-import { CirclePlus } from 'lucide-react';
-import CreateProductDialog from '../components/dialogs/CreateProductDialog';
 
 const AllProducts = () => {
-  const [open, setOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [take, setTake] = useState(10);
   const [totalItems, setTotalItems] = useState(0);
@@ -19,7 +16,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     const params: PaginationParams = {
-      order: OrderType.DESC,
+      order: OrderType.ASC,
       page: currentPage,
       take: take,
     };
@@ -30,18 +27,8 @@ const AllProducts = () => {
   }, [currentPage, take]);
 
   return (
-    <div className="page-container w-screen h-auto flex items-center flex-col gap-8 p-9">
-      <div className="flex w-full gap-4 items-center justify-between">
-        <h1>Products</h1>
-        <button
-          onClick={() => {
-            setOpen(true);
-          }}
-          className="px-3 py-2 flex items-center justify-center gap-3 bg-blue-500 cursor-pointer rounded-lg"
-        >
-          Add Product <CirclePlus />
-        </button>
-      </div>
+    <div className="page-container w-screen h-auto flex items-center flex-col gap-8 p-9 ">
+      <h1 className="text-gray-900 text-5xl font-serif">Products</h1>
 
       <div className="w-screen h-max px-4 py-2 flex flex-wrap gap-4 justify-center">
         {products.map((item) => (
@@ -55,7 +42,6 @@ const AllProducts = () => {
         totalItems={totalItems}
         take={take}
       />
-      {open && <CreateProductDialog open={open} setOpen={setOpen} setProducts={setProducts}/>}
     </div>
   );
 };
