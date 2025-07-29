@@ -1,27 +1,22 @@
 const cardData = [
-  { src: "/Xlogo.png", alt: "Twitter" },
-  { src: "/titktokLogo.svg", alt: "TikTok" },
-  { src: "/instLogo.png", alt: "Instagram" },
-  { src: "/linkLogo.png", alt: "LinkedIn" },
-]
+  { src: '/Xlogo.png', alt: 'Twitter' },
+  { src: '/titktokLogo.svg', alt: 'TikTok' },
+  { src: '/instLogo.png', alt: 'Instagram' },
+  { src: '/linkLogo.png', alt: 'LinkedIn' },
+];
 
 const CTAcard = () => {
-
   return (
     <section className="bg-[#F1F3F2] w-full max-w-[1000px] ml-4 rounded-3xl px-6 py-12 flex flex-col md:flex-row  gap-10">
-
       <div className="flex flex-col gap-6 w-full md:w-3/5">
-
         <span className="text-sm font-medium bg-white px-3 py-1 rounded-full shadow inline-flex items-center gap-2 w-fit">
           <span className="w-3 h-3 bg-gray-600 rounded-full"></span>
           Music is Classic
         </span>
 
-
         <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-black">
           Sequoia Inspiring <br /> Musico.
         </h1>
-
 
         <div>
           <span className="text-2xl font-semibold text-gray-800">01</span>
@@ -34,7 +29,6 @@ const CTAcard = () => {
           </p>
         </div>
 
-
         <div className="flex flex-col  gap-6 max-w-xl order-1 md:order-1">
           <button className="px-6 py-3 rounded-full bg-lime-300 hover:bg-lime-400 text-black font-semibold text-sm flex items-center gap-2 transition-all w-fit">
             View All Products
@@ -42,7 +36,6 @@ const CTAcard = () => {
               ➜
             </span>
           </button>
-
 
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-500">Follow us on:</span>
@@ -62,7 +55,6 @@ const CTAcard = () => {
           </div>
         </div>
       </div>
-
 
       <div className="relative w-full md:w-2/5 flex justify-center  order-1 md:order-2 ">
         <img
