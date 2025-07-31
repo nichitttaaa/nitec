@@ -77,3 +77,9 @@ export interface ProductsCreate {
 }
 
 export type User = MySelfResponse;
+
+export interface ProductsUpdate {
+  name?: string;
+  price?: number;
+  category?: string;
+}

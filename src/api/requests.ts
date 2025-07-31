@@ -8,7 +8,7 @@ import type {
   PaginationParams,
   PaginationMeta,
   ProductsResponse,
-  ProductsCreate,
+  ProductsCreate, ProductsUpdate,
 } from './types.ts';
 
 export const register = async (
@@ -60,6 +60,15 @@ export const createProduct = async (
   data: ProductsCreate
 ): Promise<ProductsResponse> => {
   const response = await api.post('/product', data);
-
   return response.data;
 };
+
+export const deleteProduct = async (productId: string): Promise<void> => {
+  const response = await api.delete(`/product/${productId}`);
+  return response.data;
+};
+
+export const updateProduct = async (data: ProductsUpdate, productId: string): Promise<void> => {
+  const response = await api.patch(`/product/${productId}`, data);
+  return response.data;
+}
