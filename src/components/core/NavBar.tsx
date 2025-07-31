@@ -14,10 +14,13 @@ import { getMySelf } from '../../api/requests.ts';
 import { useUserStore } from '../../stores/useUserStore.ts';
 import { Users } from 'lucide-react';
 import {useCartStore} from "../../stores/userCartStore.ts";
+import {useFavoritesStore} from "../../stores/useFavoritesStore.ts";
+import UserDropdown from "../dropdowns/UserDropdown.tsx";
 
 function NavBar() {
   const { user, setUser, clear } = useUserStore();
 const {cartProducts} = useCartStore();
+const {favoritesProducts} =useFavoritesStore();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -57,9 +60,12 @@ const {cartProducts} = useCartStore();
               onClick={() => {
                 navigate('/liked');
               }}
-              className="p-4 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
+              className="relative p-4 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
             >
               <Heart fill="#FF0000" stroke="#FF0000" />
+              {favoritesProducts.length > 0 && (
+                  <div className="absolute top-0 right-0 flex items-center justify-center text-center text-white rounded-full bg-red-500 size-6">{favoritesProducts.length}</div>
+              )}
             </button>
             <button
               onClick={() => {
@@ -92,22 +98,8 @@ const {cartProducts} = useCartStore();
               <LogOut />
             </button>
 
-            <button
-              onClick={() => {
-                navigate('/user');
-              }}
-              className="p-4 gap-2 rounded-full flex bg-white justify-center items-center cursor-pointer hover:border-black border border-transparent transition-all"
-            >
-              {user ? (
-                <span className="font-semibold hidden md:flex">
-                  {user?.firstName} {user?.lastName}
-                </span>
-              ) : (
-                <div className=" !w-6 loader"></div>
-              )}
+            <UserDropdown />
 
-              <UserIcon />
-            </button>
           </div>
         ) : (
           <div className=" flex items-center gap-4">

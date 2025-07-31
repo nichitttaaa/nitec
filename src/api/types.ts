@@ -83,3 +83,9 @@ export interface ProductsUpdate {
   price?: number;
   category?: string;
 }
+
+export interface UserUpdate {
+  firstName?: string;
+  lastName?: string;
+  phoneNumber?: string;
+}
