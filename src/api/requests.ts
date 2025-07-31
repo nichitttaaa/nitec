@@ -8,7 +8,7 @@ import type {
   PaginationParams,
   PaginationMeta,
   ProductsResponse,
-  ProductsCreate, ProductsUpdate,
+  ProductsCreate, ProductsUpdate, UserUpdate,
 } from './types.ts';
 
 export const register = async (
@@ -70,5 +70,10 @@ export const deleteProduct = async (productId: string): Promise<void> => {
 
 export const updateProduct = async (data: ProductsUpdate, productId: string): Promise<void> => {
   const response = await api.patch(`/product/${productId}`, data);
+  return response.data;
+}
+
+export const updateUser = async (data: UserUpdate) => {
+  const response = await api.patch("/user/profile", data)
   return response.data;
 }

@@ -66,12 +66,11 @@ const AllProducts = () => {
         {products.map((item) => (
           <BoxProduct
             key={item.id}
-            name={item.name}
-            price={item.price}
             onDelete={() => onDelete(item.id)}
             isDeleting={isDeleting}
             onEdit={() => onEdit(item)}
             addToCart={()=>{addCartProduct(item)}}
+            product={item}
 
           />
         ))}
