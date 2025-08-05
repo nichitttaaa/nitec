@@ -2,6 +2,7 @@
 
 import { create } from 'zustand';
 import type {ProductsResponse} from "../api/types.ts";
+import {persist, createJSONStorage} from "zustand/middleware"
 
 
 interface FavoritesStore {
@@ -11,20 +12,28 @@ interface FavoritesStore {
 
 }
 
-export const useFavoritesStore = create<FavoritesStore>((set, get) => ({
-favoritesProducts: [],
+export const useFavoritesStore = create<FavoritesStore>()(
+    persist(
+        (set, get) => ({
+            favoritesProducts: [],
 
-    toggleFavorites: (product: ProductsResponse)  => {
-    const newFavorites = get().favoritesProducts;
-    const isLiked = get().checkFavorite(product.id)
-    if(isLiked){
-       set({favoritesProducts: newFavorites.filter((p) => p.id !== product.id)});
-    }else{
-        set({favoritesProducts: [product, ...newFavorites]});
-    }},
+            toggleFavorites: (product: ProductsResponse)  => {
+                const newFavorites = get().favoritesProducts;
+                const isLiked = get().checkFavorite(product.id)
+                if(isLiked){
+                    set({favoritesProducts: newFavorites.filter((p) => p.id !== product.id)});
+                }else{
+                    set({favoritesProducts: [product, ...newFavorites]});
+                }},
 
-    checkFavorite: (id: string) => {
-   return get().favoritesProducts.some((product)  => product.id === id);
+            checkFavorite: (id: string) => {
+                return get().favoritesProducts.some((product)  => product.id === id);
 
-    }
-}));
+            }
+        }),
+        {
+            name: "userFavoritesStore",
+            storage: createJSONStorage(() => localStorage)
+        }
+    )
+    );
