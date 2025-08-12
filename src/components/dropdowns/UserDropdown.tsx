@@ -35,7 +35,7 @@ const UserDropdown = () => {
                 <span>{user?.phoneNumber}</span>
                 <button
                     onClick={() => setOpenDialog(true)}
-                    className="p-2 flex items-center justify-center bg-gray-300 rounded-sm">Edit</button>
+                    className="p-2 flex items-center justify-center bg-gray-300 rounded-sm cursor-pointer">Edit</button>
                 {openDialog && (
                     <UserEditDialog open={openDialog} setOpen={setOpenDialog}/>
                 )}

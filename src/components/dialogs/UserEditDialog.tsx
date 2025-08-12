@@ -2,6 +2,7 @@ import {Button, Dialog, DialogBody, DialogFooter, DialogHeader} from "@material-
 import {type Dispatch, type SetStateAction, useState} from "react";
 import {updateUser} from "../../api/requests.ts";
 import {toast} from "react-toastify";
+import { useUserStore } from "../../stores/useUserStore.ts";
 
 interface UserEditDialogProps {
     open: boolean;
@@ -9,9 +10,10 @@ interface UserEditDialogProps {
 }
 
 const UserEditDialog= ({open, setOpen}:UserEditDialogProps) => {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
+  const {user, setUser} = useUserStore()
+    const [firstName, setFirstName] = useState(user?.firstName ?? "");
+    const [lastName, setLastName] = useState(user?.lastName ?? "");
+    const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber ?? "");
 
     const handleOpen = () => {
         setOpen(!open);
@@ -23,7 +25,9 @@ const UserEditDialog= ({open, setOpen}:UserEditDialogProps) => {
             lastName: lastName,
             phoneNumber: phoneNumber,
         }
-        updateUser(payload).then(() => {
+        updateUser(payload).then((data) => {
+          setUser(data)
+          setOpen(false)
             toast.success("User updated successfully");
         })
     }
@@ -84,7 +88,7 @@ const UserEditDialog= ({open, setOpen}:UserEditDialogProps) => {
                     variant="gradient"
                     color="green"
                     onClick={handleEditUser}
-                    disabled={firstName === '' || lastName === '' || phoneNumber === ''}
+                    disabled={firstName === '' || lastName === '' }
                 >
                     <span>Save</span>
                 </Button>

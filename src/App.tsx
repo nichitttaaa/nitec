@@ -3,9 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 import NavBarLayout from './layouts/NavBarLayout.tsx';
 import { ToastContainer } from 'react-toastify';
 import useAuthGuard from './hooks/useAuthGuard.tsx';
+import useSocketConection from './hooks/useSocketConection.tsx';
 
 function App() {
   useAuthGuard();
+  useSocketConection()
 
   return (
     <>

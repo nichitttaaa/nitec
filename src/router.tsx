@@ -1,11 +1,14 @@
+
 import AllProducts from './pages/AllProducts';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
 import Liked from './pages/Liked';
 import LoginPage from './pages/LoginPage';
 import Register from './pages/Register';
+import TemperatureConvertor from './pages/TemperatureConvertor';
 import User from './pages/User';
 import Users from './pages/Users';
+import TimerPage from './pages/TimerPage';
 
 const router = [
   {
@@ -48,6 +51,16 @@ const router = [
     path: '/users',
     element: <Users />,
     showNavBar: true,
+  },
+  {
+    path: '/temperature',
+    element: <TemperatureConvertor />,
+    showNavBar: false,
+  },
+  {
+    path: '/timer',
+    element: <TimerPage />,
+    showNavBar: false,
   },
 ];
 

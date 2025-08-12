@@ -1,4 +1,4 @@
-// @ts-ignore
+// "@ts-expect-error"
 enum UserRoleEnum {
   ADMIN = 'ADMIN',
   USER = 'USER',
